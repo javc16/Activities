@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XFOk/xFm1vVEO8IAvWzMk6t6QMqiUnorNhM6ETdGP+OYTz9CRqAbej77XbfjdkQOD8NY0Wx0FIbMjdkWUjIp5Q==",
+  "dgSpecHash": "Pcrek8adCVhhVdqdz8/Xn+hQ2AL3EWfsWo+8fTgkMnEzIJvpP9EBZEXJOXia9bW0L6Pbvm7OG0OqKOc81nAo5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexe\\Documents\\BackEnd-Activitites\\test\\BackEnd-Activitites.Tests\\BackEnd-Activitites.Tests.csproj",
+  "projectFilePath": "C:\\Users\\alexe\\Documents\\Activities\\test\\BackEnd-Activitites.Tests\\BackEnd-Activitites.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexe\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.4.0\\amazon.lambda.apigatewayevents.2.4.0.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\amazon.lambda.applicationloadbalancerevents\\2.1.0\\amazon.lambda.applicationloadbalancerevents.2.1.0.nupkg.sha512",
