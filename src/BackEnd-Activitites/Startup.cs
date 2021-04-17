@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackEndActivitites;
 using BackEndActivitites.Context;
+using BackEndActivitites.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +33,10 @@ namespace BackEnd_Activitites
             services.AddControllers();
 
             services.AddDbContext<NewContext>(
-       options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+             options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+          
+            services.AddScoped<ICitizenService, CitizenService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

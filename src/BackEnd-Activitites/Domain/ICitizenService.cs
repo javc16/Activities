@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackEndActivitites.Domain
 {
-    interface ICitizenService
+    public interface ICitizenService
     {
         Task<IEnumerable<Citizen>> GetAll();
     }
