@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BackEndActivitites.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace BackEndActivitites.Context
 {
-    public class Context:DbContext
+    public class NewContext:DbContext
     {
-        public Context(DbContextOptions<Context> options) : base(options)
+        public NewContext(DbContextOptions<NewContext> options) : base(options)
         {
 
         }
 
+        public DbSet<Citizen> Citizen { get; set; }
+        public DbSet<NativeCity> NativeCity { get; set; }
 
-       
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
