@@ -10,5 +10,8 @@ namespace BackEndActivitites.Domain
     {
         Task<IEnumerable<Citizen>> GetAll();
         Task<Citizen> GetById(long id);
+        Task<string> PostCitizen(Citizen citizen);
+        Task<string> PutCitizen(Citizen citizen);
+        Task<string> DeleteCitizen(int id);
     }
 }
