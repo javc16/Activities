@@ -26,5 +26,13 @@ namespace BackEndActivitites.Controllers
         {
             return Ok(await _citizenService.GetAll());
         }
+
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Citizen>> GetById(long id)
+        {
+            return Ok(await _citizenService.GetById(id));
+        }
+
     }
 }

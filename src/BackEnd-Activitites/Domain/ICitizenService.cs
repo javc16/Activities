@@ -9,5 +9,6 @@ namespace BackEndActivitites.Domain
     public interface ICitizenService
     {
         Task<IEnumerable<Citizen>> GetAll();
+        Task<Citizen> GetById(long id);
     }
 }

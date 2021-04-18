@@ -21,5 +21,16 @@ namespace BackEndActivitites.Domain
         {
             return await _context.Citizen.Include(e=>e.NativeCity).ToListAsync();
         }
+
+        public async Task<Citizen> GetById(long id) 
+        {
+            var citizen = await _context.Citizen.Include(e => e.NativeCity).FirstOrDefaultAsync(r => r.Id == id);
+            if (citizen == null) 
+            {
+                return new Citizen();
+            }
+
+            return citizen;
+        }
     }
 }
