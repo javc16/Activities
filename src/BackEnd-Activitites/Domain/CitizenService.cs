@@ -45,14 +45,17 @@ namespace BackEndActivitites.Domain
             {
                 return "This citizen already exists in our system";
             }
-            if (string.IsNullOrEmpty(citizen.IdNAtiveCity.ToString()))
-            {
-                return "Debe asignar una ciudad natal";
-            }
-            if (citizen.DNI.Length > 12 || citizen.DNI.Length < 12) 
+            //if (string.IsNullOrEmpty(citizen.IdNativeCity.ToString()))
+            //{
+            //    return "Debe asignar una ciudad natal";
+            //}
+            if (citizen.DNI.Length > 13 || citizen.DNI.Length < 13) 
             {
                 return "Solo se permiten 13 digitos";
             }
+            var post = await _context.NativeCity.FirstOrDefaultAsync(r=>r.Id==citizen.IdNativeCity);
+
+            citizen.NativeCity = post;
             _context.Citizen.Add(citizen);
             await _context.SaveChangesAsync();
 
@@ -61,7 +64,7 @@ namespace BackEndActivitites.Domain
 
         public async Task<string> PutCitizen(Citizen citizen) 
         {
-            NativeCity nativeCity = await _context.NativeCity.FirstOrDefaultAsync(q => q.Id == citizen.IdNAtiveCity);
+            NativeCity nativeCity = await _context.NativeCity.FirstOrDefaultAsync(q => q.Id == citizen.IdNativeCity);
             if (nativeCity == null) 
             {
                 return "The Native City does not exists";

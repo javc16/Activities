@@ -20,7 +20,7 @@ namespace BackEndActivitites.Domain
 
         public async Task<IEnumerable<NativeCity>> GetAll()
         {
-            return await _context.NativeCity.ToListAsync();
+            return await _context.NativeCity.Include(e=>e.Citizens).ToListAsync();
         }
 
         public async Task<NativeCity> GetById(long id)

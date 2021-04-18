@@ -36,6 +36,12 @@ namespace BackEnd_Activitites
              options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
           
             services.AddScoped<ICitizenService, CitizenService>();
+            services.AddScoped<INativeCityService, NativeCityService>();
+
+            services.AddControllersWithViews()
+            .AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
         }
 

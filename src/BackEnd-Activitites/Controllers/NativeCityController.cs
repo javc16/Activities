@@ -55,7 +55,7 @@ namespace BackEndActivitites.Controllers
                 return BadRequest();
             }
 
-            string message = await _nativeCityService.PutNativeCity(id, item);
+            string message = await _nativeCityService.PutNativeCity(item);
 
             if (message != string.Empty)
             {
@@ -67,7 +67,7 @@ namespace BackEndActivitites.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<NativeCity>> DeleteById(int id)
         {
-            var ciudadano = await _ciudadNatalService.DeleteCiudadNatal(id);
+            var ciudadano = await _nativeCityService.DeleteNativeCity(id);
             if (ciudadano != string.Empty)
             {
                 return NotFound();

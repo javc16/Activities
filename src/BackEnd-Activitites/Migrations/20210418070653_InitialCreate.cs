@@ -2,7 +2,7 @@
 
 namespace BackEndActivitites.Migrations
 {
-    public partial class Adding_Citizen_And_NativeCity_Entities : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace BackEndActivitites.Migrations
                     Name = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    IdNAtiveCity = table.Column<int>(nullable: false),
+                    IdNativeCity = table.Column<int>(nullable: false),
                     NativeCityId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

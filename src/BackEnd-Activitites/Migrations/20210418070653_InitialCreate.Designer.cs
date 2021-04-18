@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEndActivitites.Migrations
 {
     [DbContext(typeof(NewContext))]
-    [Migration("20210417203501_Adding_Citizen_And_NativeCity_Entities")]
-    partial class Adding_Citizen_And_NativeCity_Entities
+    [Migration("20210418070653_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,7 @@ namespace BackEndActivitites.Migrations
                     b.Property<string>("DNI")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdNAtiveCity")
+                    b.Property<int>("IdNativeCity")
                         .HasColumnType("int");
 
                     b.Property<string>("LastName")

@@ -12,7 +12,7 @@ namespace BackEndActivitites.Models
         public string Name { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
-        public int IdNAtiveCity { get; set; }
+        public int IdNativeCity { get; set; }
         public NativeCity NativeCity { get; set; }
 
     }
