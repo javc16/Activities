@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Pcrek8adCVhhVdqdz8/Xn+hQ2AL3EWfsWo+8fTgkMnEzIJvpP9EBZEXJOXia9bW0L6Pbvm7OG0OqKOc81nAo5A==",
+  "dgSpecHash": "8g6XoRcqsYpx0FACkai20l1ier+Pf+vQkQHZSyy1NZBej79a4DSF+FQ6DTPHrxLakEVBdX7jXlxHbI85FuHq5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexe\\Documents\\Activities\\test\\BackEnd-Activitites.Tests\\BackEnd-Activitites.Tests.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\alexe\\.nuget\\packages\\amazon.lambda.testutilities\\1.2.0\\amazon.lambda.testutilities.1.2.0.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\awssdk.core\\3.3.100\\awssdk.core.3.3.100.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.101\\awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.4\\microsoft.aspnetcore.authentication.jwtbearer.3.1.4.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.8\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

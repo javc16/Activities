@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Http;
 namespace BackEnd_Activitites.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : ControllerBase
     {
         // GET api/values
-        [HttpGet]
+        [HttpGet]    
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
@@ -40,5 +41,35 @@ namespace BackEnd_Activitites.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet("public")]
+        public IActionResult GetPublic()
+        {
+            var result = new Result("Se llamó al servicio publico de manera satisfactoria.!");
+            return Ok(result);
+        }
+
+        [HttpGet("private")]
+        public IActionResult GetPrivate()
+        {
+            var result = new Result("Se llamó al servicio privado de manera satisfactoria.!");
+            return Ok(result);
+        }
+
+        [HttpGet("permission")]
+        public IActionResult GetPermissions()
+        {
+            var result = new Result("Se llamó al servicio privado con permisos de manera satisfactoria.!");
+            return Ok(result);
+        }
+
+    }
+    public class Result
+    {
+        public Result(string msg)
+        {
+            this.Msg = msg;
+        }
+        public string Msg { get; set; }
     }
 }
