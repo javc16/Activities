@@ -36,7 +36,7 @@ namespace BackEndActivitites.Domain
 
         public async Task<string> PostNativeCity(NativeCity nativeCity)
         {            
-            var SavedNativeCity = await _context.Citizen.FirstOrDefaultAsync(r => r.Id == nativeCity.Id);
+            var SavedNativeCity = await _context.NativeCity.FirstOrDefaultAsync(r => r.Name == nativeCity.Name);
             if (SavedNativeCity != null)
             {
                 return "This city already exists in our system";
