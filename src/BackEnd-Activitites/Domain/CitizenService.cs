@@ -1,4 +1,5 @@
 ﻿using BackEndActivitites.Context;
+using BackEndActivitites.Helpers;
 using BackEndActivitites.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,44 +23,40 @@ namespace BackEndActivitites.Domain
             return await _context.Citizen.Include(e=>e.NativeCity).ToListAsync();
         }
 
-        public async Task<Citizen> GetById(long id) 
+        public async Task<Response> GetById(long id) 
         {
             var citizen = await _context.Citizen.Include(e => e.NativeCity).FirstOrDefaultAsync(r => r.Id == id);
             if (citizen == null) 
             {
-                return new Citizen();
+                return new Response { Message = "Citizen no exists" };
             }
 
-            return citizen;
+            return new Response { Data = citizen };
         }
 
-        public async Task<string> PostCitizen(Citizen citizen) 
+        public async Task<Response> PostCitizen(Citizen citizen) 
         {
             if (string.IsNullOrEmpty(citizen.DNI) || string.IsNullOrEmpty(citizen.Name)
                 || string.IsNullOrEmpty(citizen.LastName))
             {
-                return "Please enter the required values";
+                return new Response {Message= "Please enter the required values" };
             }
-            var SavedCitizen = await _context.Citizen.FirstOrDefaultAsync(r => r.Id == citizen.Id);
+            var SavedCitizen = await _context.Citizen.FirstOrDefaultAsync(r => r.DNI == citizen.DNI);
             if (SavedCitizen != null) 
             {
-                return "This citizen already exists in our system";
+                return new Response { Message = "This citizen already exists in our system" };
             }
-            //if (string.IsNullOrEmpty(citizen.IdNativeCity.ToString()))
-            //{
-            //    return "Debe asignar una ciudad natal";
-            //}
+       
             if (citizen.DNI.Length > 13 || citizen.DNI.Length < 13) 
             {
-                return "Solo se permiten 13 digitos";
+                return new Response { Message = "You need to enter a DNI of 13 digits" };
             }
             var post = await _context.NativeCity.FirstOrDefaultAsync(r=>r.Id==citizen.IdNativeCity);
 
             citizen.NativeCity = post;
             _context.Citizen.Add(citizen);
             await _context.SaveChangesAsync();
-
-            return "Added sucefully";
+            return new Response { Message = "Added sucefully" };
         }
 
         public async Task<string> PutCitizen(Citizen citizen) 

@@ -37,14 +37,8 @@ namespace BackEndActivitites.Controllers
 
         [HttpPost]
         public async Task<ActionResult<Citizen>> Post(Citizen item)
-        {
-
-            var message = await _citizenService.PostCitizen(item);
-            if (!string.IsNullOrEmpty(message))
-            {
-                return BadRequest(message);
-            }
-            return CreatedAtAction(nameof(PutCiudadano), new { id = item.Id }, item);
+        {       
+            return Ok(await _citizenService.PostCitizen(item));
         }
 
         [HttpPut("{id}")]
