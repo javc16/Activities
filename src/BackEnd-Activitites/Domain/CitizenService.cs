@@ -59,7 +59,7 @@ namespace BackEndActivitites.Domain
             _context.Citizen.Add(citizen);
             await _context.SaveChangesAsync();
 
-            return string.Empty;
+            return "Added sucefully";
         }
 
         public async Task<string> PutCitizen(Citizen citizen) 

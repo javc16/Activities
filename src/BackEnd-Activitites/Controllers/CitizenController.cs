@@ -24,7 +24,8 @@ namespace BackEndActivitites.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Citizen>>> GetAll()
         {
-            return Ok(await _citizenService.GetAll());
+            var result = await _citizenService.GetAll();
+            return Ok(result);
         }
 
 
