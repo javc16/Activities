@@ -12,7 +12,7 @@ namespace Activities.Domain
         Task<IEnumerable<Citizen>> GetAll();
         Task<Response> GetById(long id);
         Task<Response> PostCitizen(Citizen citizen);
-        Task<string> PutCitizen(Citizen citizen);
-        Task<string> DeleteCitizen(int id);
+        Task<Response> PutCitizen(Citizen citizen);
+        Task<Response> DeleteCitizen(int id);
     }
 }

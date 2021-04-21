@@ -44,30 +44,13 @@ namespace Activities.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<Citizen>> PutCiudadano(int id, Citizen item)
         {
-            if (id != item.Id)
-            {
-                return BadRequest();
-            }
-
-            string message = await _citizenService.PutCitizen(item);
-
-            if (message != string.Empty)
-            {
-                return BadRequest(message);
-            }
-            return NoContent();
+            return Ok(await _citizenService.PutCitizen(item));      
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Citizen>> DeleteById(int id)
         {
-            var ciudadano = await _citizenService.DeleteCitizen(id);
-            if (ciudadano != string.Empty)
-            {
-                return NotFound();
-            }
-
-            return NoContent();
+            return Ok(await _citizenService.DeleteCitizen(id));            
         }
 
     }

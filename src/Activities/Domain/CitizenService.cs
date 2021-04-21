@@ -47,7 +47,7 @@ namespace Activities.Domain
                 return new Response { Message = "This citizen already exists in our system" };
             }
 
-            if (citizen.DNI.Length > 12 || citizen.DNI.Length < 12)
+            if (citizen.DNI.Length > 13 || citizen.DNI.Length < 13)
             {
                 return new Response { Message = "You need to enter a DNI of 13 digits" };
             }
@@ -59,20 +59,20 @@ namespace Activities.Domain
             return new Response { Message = "Added sucefully" };
         }
 
-        public async Task<string> PutCitizen(Citizen citizen)
+        public async Task<Response> PutCitizen(Citizen citizen)
         {
             NativeCity nativeCity = await _context.NativeCity.FirstOrDefaultAsync(q => q.Id == citizen.IdNativeCity);
             if (nativeCity == null)
             {
-                return "The Native City does not exists";
+                return new Response { Message = "The Native City does not exists" };
             }
             citizen.NativeCity = nativeCity;
             _context.Entry(citizen).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return string.Empty;
+            return new Response { Message = "Information modified sucefully" };
         }
 
-        public async Task<string> DeleteCitizen(int id)
+        public async Task<Response> DeleteCitizen(int id)
         {
             var citizen = await _context.Citizen.FindAsync(id);
             if (citizen == null)
@@ -81,7 +81,7 @@ namespace Activities.Domain
             }
             _context.Citizen.Remove(citizen);
             await _context.SaveChangesAsync();
-            return string.Empty;
+            return new Response { Message = $"$Citizen {citizen.Name} {citizen.LastName} deleted correctly" };
         }
 
 
