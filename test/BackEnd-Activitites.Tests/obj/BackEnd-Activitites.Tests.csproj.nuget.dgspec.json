@@ -147,6 +147,10 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[15.5.0, )"

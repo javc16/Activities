@@ -1,13 +1,13 @@
-﻿using BackEndActivitites.Context;
-using BackEndActivitites.Helpers;
-using BackEndActivitites.Models;
+﻿using BackEnd_Activitites.Context;
+using BackEnd_Activitites.Helpers;
+using BackEnd_Activitites.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndActivitites.Domain
+namespace BackEnd_Activitites.Domain
 {
     public class CitizenService : ICitizenService
     {
@@ -47,7 +47,7 @@ namespace BackEndActivitites.Domain
                 return new Response { Message = "This citizen already exists in our system" };
             }
        
-            if (citizen.DNI.Length > 13 || citizen.DNI.Length < 13) 
+            if (citizen.DNI.Length > 12 || citizen.DNI.Length < 12) 
             {
                 return new Response { Message = "You need to enter a DNI of 13 digits" };
             }
@@ -66,7 +66,7 @@ namespace BackEndActivitites.Domain
             {
                 return "The Native City does not exists";
             }
-
+            citizen.NativeCity = nativeCity;
             _context.Entry(citizen).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return string.Empty;

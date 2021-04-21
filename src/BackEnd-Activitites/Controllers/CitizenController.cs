@@ -1,5 +1,5 @@
-﻿using BackEndActivitites.Domain;
-using BackEndActivitites.Models;
+﻿using BackEnd_Activitites.Domain;
+using BackEnd_Activitites.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndActivitites.Controllers
+namespace BackEnd_Activitites.Controllers
 {
     [Route("api/[controller]")]
 [ApiController]

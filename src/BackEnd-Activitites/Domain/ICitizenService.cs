@@ -1,11 +1,11 @@
-﻿using BackEndActivitites.Helpers;
-using BackEndActivitites.Models;
+﻿using BackEnd_Activitites.Helpers;
+using BackEnd_Activitites.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndActivitites.Domain
+namespace BackEnd_Activitites.Domain
 {
     public interface ICitizenService
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndActivitites.Models
+namespace BackEnd_Activitites.Models
 {
     public class NativeCity
     {

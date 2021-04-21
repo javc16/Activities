@@ -1,12 +1,13 @@
-﻿using BackEndActivitites.Context;
-using BackEndActivitites.Models;
+﻿using BackEnd_Activitites.Context;
+using BackEnd_Activitites.Helpers;
+using BackEnd_Activitites.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndActivitites.Domain
+namespace BackEnd_Activitites.Domain
 {
     public class NativeCityService: INativeCityService
     {
@@ -34,18 +35,18 @@ namespace BackEndActivitites.Domain
             return nativeCity;
         }
 
-        public async Task<string> PostNativeCity(NativeCity nativeCity)
+        public async Task<Response> PostNativeCity(NativeCity nativeCity)
         {            
             var SavedNativeCity = await _context.NativeCity.FirstOrDefaultAsync(r => r.Name == nativeCity.Name);
             if (SavedNativeCity != null)
             {
-                return "This city already exists in our system";
-            }       
-           
+                return new Response { Message = "This city already exists" };
+            }
+
             _context.NativeCity.Add(nativeCity);
             await _context.SaveChangesAsync();
 
-            return string.Empty;
+            return  new Response { Message = "Added sucefully" };
         }
 
         public async Task<string> PutNativeCity(NativeCity nativeCity)

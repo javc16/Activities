@@ -162,3 +162,4 @@ C:\Users\alexe\Documents\Activities\test\BackEnd-Activitites.Tests\obj\Debug\net
 C:\Users\alexe\Documents\Activities\test\BackEnd-Activitites.Tests\obj\Debug\netcoreapp3.1\BackEnd-Activitites.Tests.dll
 C:\Users\alexe\Documents\Activities\test\BackEnd-Activitites.Tests\obj\Debug\netcoreapp3.1\BackEnd-Activitites.Tests.pdb
 C:\Users\alexe\Documents\Activities\test\BackEnd-Activitites.Tests\obj\Debug\netcoreapp3.1\BackEnd-Activitites.Tests.genruntimeconfig.cache
+C:\Users\alexe\Documents\Activities\test\BackEnd-Activitites.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
